@@ -13,9 +13,9 @@
     <script type='text/javascript' src='http://code.jquery.com/jquery-1.4.4.min.js'></script>
 <script type='text/javascript'>//<![CDATA[ 
 $(function(){
-$('a-cursor').bind('contextmenu', function(e){
-$(this).camera("userHeight: 10");
-return true;
+$('#cameraid').bind('contextmenu', function(e){
+$(this).camera("serHeight: 10");
+return false;
 }); 
 });//]]>  
 </script>
@@ -50,10 +50,11 @@ return true;
       ></a-entity>
 
       <!-- Camera. -->
-      <a-camera>
+      <a-camera id="cameraid"
+        camera="userHeight: 1.6"
+      >
         <a-cursor id="cameraCursor"
           intersection-spawn="event: click; mixin: voxel"
-          camera="userHeight: 1.6"
         ></a-cursor>
       </a-camera>
     </a-scene>
