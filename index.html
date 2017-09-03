@@ -10,15 +10,6 @@
     <script src="components/intersection-spawn.js"></script>
     <script src="components/random-texture.js"></script>
     <script src="components/snap.js"></script>
-    <script type='text/javascript' src='http://code.jquery.com/jquery-1.4.4.min.js'></script>
-<script type='text/javascript'>//<![CDATA[ 
-$(function(){
-$('#cameraid').bind('contextmenu', function(e){
-$(this).camera("serHeight: 10");
-return false;
-}); 
-});//]]>  
-</script>
   </head>
   <body>
     <a-scene avatar-recorder>
@@ -50,10 +41,8 @@ return false;
       ></a-entity>
 
       <!-- Camera. -->
-      <a-camera id="cameraid"
-        camera="userHeight: 1.6"
-      >
-        <a-cursor id="cameraCursor"
+      <a-camera>
+        <a-cursor
           intersection-spawn="event: click; mixin: voxel"
         ></a-cursor>
       </a-camera>
