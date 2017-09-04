@@ -7,21 +7,21 @@
     <script type="text/javascript" src="https://unpkg.com/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
     <script type="text/javascript" src="https://unpkg.com/aframe-controller-cursor-component/dist/aframe-controller-cursor-component.min.js"></script>
     <!--<script type="text/javascript" src="https://unpkg.com/aframe-motion-capture-components/dist/aframe-motion-capture-components.min.js"></script>-->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="components/intersection-spawn.js"></script>
     <script type="text/javascript" src="components/random-texture.js"></script>
     <script type="text/javascript" src="components/snap.js"></script>
     <script type='text/javascript'>//<![CDATA[
-    $(function(){
-      $( "a-scene" ).on( "contextmenu", function(event) {
-        event.preventDefault();
-        event.stopPropagation();
-        // Add whatever you need to add when you right-click
-        console.log("Right click");
-        return false;
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelector("a-scene").addEventListener("contextmenu", function (event) {
+          event.cancelBubble = true;
+          event.returnValue = false;
+          event.stopPropagation();
+          event.preventDefault();
+          // Add whatever you need to add when you right-click
+          return false;
+        });
       });
-    });//]]>
-    </script>
+    //]]></script>
   </head>
   <body>
     <a-scene avatar-recorder>
